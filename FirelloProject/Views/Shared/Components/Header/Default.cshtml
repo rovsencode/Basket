@@ -1,5 +1,9 @@
 ﻿@model Bio
-
+@using FirelloProject.Services.Basket;
+@inject IBasketProductCount _basketProductCount;
+@{
+       int result=_basketProductCount.CalculateBasketProductCount();
+}
 
 
 <header>
@@ -145,7 +149,7 @@
                                 <a asp-controller="basket" asp-action="showbasket"> 
                                     <i class="fas fa-shopping-bag"></i>
                                     </a>
-                                <sup class="rounded-circle">0</sup>
+                                <sup class="rounded-circle">@result</sup>
                                 <span>CART ($0)</span>
                                 <ul class="list-unstyled py-3">
                                     <li class="">No products in the cart.</li>

@@ -1,3 +1,4 @@
+using FirelloProject;
 using FirelloProject.DAL;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,7 +12,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(_config.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddControllersWithViews();
-//builder.Services.ServiceRegistration();
+builder.Services.FirelloServiceRegistration();
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout= TimeSpan.FromSeconds(15);

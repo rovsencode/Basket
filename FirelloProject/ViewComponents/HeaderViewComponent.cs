@@ -3,6 +3,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Build.Framework;
 using FirelloProject.Models;
+using Newtonsoft.Json;
+using FirelloProject.ViewModels;
 
 namespace FirelloProject.ViewComponents
 {
